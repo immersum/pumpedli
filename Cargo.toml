@@ -1,0 +1,43 @@
+[package]
+name = "pumpedli"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+keywords = ["no-std", "embedded", "async"]
+
+[dependencies]
+embassy-embedded-hal = { version = "0.2.0", features = ["defmt"] }
+embassy-executor = { version = "0.6.0", features = ["defmt", "arch-cortex-m", "executor-thread", "executor-interrupt", "integrated-timers", "task-arena-size-16384"] }
+embassy-futures = "0.1.1"
+embassy-rp = { version = "0.2.0", features = ["defmt", "critical-section-impl", "time-driver", "unstable-pac"] }
+embassy-time = { version = "0.3.2", features = ["defmt", "defmt-timestamp-uptime"] }
+embassy-sync = { version = "0.6.0", features = ["defmt"] }
+embassy-usb-logger = "0.2.0"
+
+defmt = "0.3.8"
+defmt-rtt = "0.4.1"
+fixed = "1.28.0"
+fixed-macro = "1.2.0"
+
+cortex-m = { version = "0.7.7", features = ["inline-asm"] }
+cortex-m-rt = "0.7.3"
+embedded-graphics = { version = "0.8.1", features = ["defmt", "fixed"] }
+embedded-hal = "1.0.0"
+embedded-hal-async = "1.0.0"
+eg-seven-segment = "0.2.0"
+display-interface = { version = "0.5.0", features = ["defmt-03"] }
+display-interface-spi = "0.5.0"
+panic-probe = { version = "0.3.2", features = ["print-defmt"] }
+heapless = { version = "0.8.0", features = ["defmt-03", "portable-atomic"] }
+mipidsi = { version = "0.8.0", features = ["batch"] }
+palette = { version = "0.7.6", default-features = false, features = ["libm", "named"] }
+bilge = "0.2.0"
+
+static_cell = "2.1.0"
+portable-atomic = { version = "1.7.0", features = ["critical-section"] }
+log = "0.4.22"
+pio-proc = "0.2.2"
+pio = "0.2.1"
+
+[profile.release]
+debug = 2
